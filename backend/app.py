@@ -72,7 +72,7 @@ def searchForUser(userName):
         
     except IntegrityError:
         flash('Not Found')
-        return redirect(url_of('home'))
+        return render_template("searchPage.html" , user = "Not Found")
     
     return render_template("searchPage.html" , user = user)
     
