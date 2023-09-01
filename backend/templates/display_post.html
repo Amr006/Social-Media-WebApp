@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+<h1>Post</h1>
+<div class="card">
+  <img class="card-img-top" src="{{ post.image_url }}" alt="Post Image" />
+  <div class="card-body">
+    <h5 class="card-title">{{ post.description }}</h5>
+    <p class="card-text">Posted by: {{ post.user_id }}</p>
+  </div>
+</div>
+<br />
+<h2>Comments</h2>
+<ul class="list-group">
+  {% for comment in post.comments %}
+  <li class="list-group-item">{{ comment.comment_content }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
