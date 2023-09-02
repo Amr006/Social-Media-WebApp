@@ -36,7 +36,7 @@ header .contain, footer .contain, section .contain {
     padding-right: 100px;
 }
 
-section .contain{
+section .contain {
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -52,7 +52,7 @@ section .contain{
     transition: var(--tran);
 }
 
-ul{
+ul {
     list-style: none;
 }
 
@@ -182,14 +182,58 @@ a {
     font-weight: 800 !important;
 }
 
-.center_x{
+.center_x {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200) {
+    header .contain, footer .contain, section .contain {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
 
+    section .contain {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .g5 {
+        gap: 3px !important;
+    }
+
+    .g10 {
+        gap: 8px !important;
+    }
+
+    .g20 {
+        gap: 16px !important;
+    }
+
+    .g30 {
+        gap: 25px !important;
+    }
+
+    .g40 {
+        gap: 30px !important;
+    }
+
+    .g50 {
+        gap: 40px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    header .contain, footer .contain, section .contain {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    section .contain {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
 
     .g5 {
         gap: 3px !important;
@@ -217,6 +261,15 @@ a {
 }
 
 @media (max-width: 768px) {
+    header .contain, footer .contain, section .contain {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    section .contain {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 
     .g5 {
         gap: 2px !important;
@@ -240,5 +293,41 @@ a {
 
     .g50 {
         gap: 30px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    header .contain, footer .contain, section .contain {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    section .contain {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .g5 {
+        gap: 1px !important;
+    }
+
+    .g10 {
+        gap: 3px !important;
+    }
+
+    .g20 {
+        gap: 8px !important;
+    }
+
+    .g30 {
+        gap: 16px !important;
+    }
+
+    .g40 {
+        gap: 20px !important;
+    }
+
+    .g50 {
+        gap: 25px !important;
     }
 }

@@ -7,6 +7,10 @@
       href="{{ url_for('static', filename='css/webGhoul.css') }}"
     />
     <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/connect.png') }}"
+    />
+    <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/global.css') }}"
     />
@@ -17,10 +21,9 @@
   </head>
   <body>
     <main>
-      {% include './components/header.html' %}
-      {% include './components/alert.html' %}
-      {% block content %}{% endblock %}
-      {% include './components/footer.html' %}
+      {% include './components/header.html' %} {% include
+      './components/alert.html' %} {% block content %}{% endblock %} {% include
+      './components/footer.html' %}
     </main>
   </body>
 </html>
