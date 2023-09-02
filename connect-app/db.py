@@ -176,6 +176,7 @@ def get_comments_by_post_id(connection, post_id):
         comment["date"] = row[4]
         user_row = get_user_by_user_id(connection, int(row[1]))
         if user_row:
+            comment["admin"] = user_row[3]
             comment["username"] = user_row[1]
         comments.append(comment)
     return comments

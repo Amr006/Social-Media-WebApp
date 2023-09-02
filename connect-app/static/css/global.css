@@ -459,6 +459,7 @@ textarea {
     .post_description {
         font-size: 20px;
     }
+
     .user_name_and_role span {
         font-size: 15px;
     }
@@ -466,6 +467,9 @@ textarea {
     .user_name_and_role img {
         width: 15px;
     }
+
+
+
     .post_image {
         width: 100px;
     }
@@ -497,13 +501,18 @@ textarea {
     line-height: 20px;
 }
 
-.comment_user .post_data span:first-child {
-    font-size: 18px;
-}
 
 .comment_user .post_data span:last-child {
     font-size: 10px;
     color: var(--main);
+}
+
+.user_name_and_role_for_comment span {
+    font-size: 18px;
+}
+
+.user_name_and_role_for_comment img {
+    width: 20px;
 }
 
 @media (max-width:992px) {
@@ -523,12 +532,17 @@ textarea {
         line-height: 18px;
     }
 
-    .comment_user .post_data span:first-child {
-        font-size: 16px;
-    }
 
     .comment_user .post_data span:last-child {
         font-size: 8px;
+    }
+
+    .user_name_and_role_for_comment span {
+        font-size: 16px;
+    }
+
+    .user_name_and_role_for_comment img {
+        width: 18px;
     }
 }
 
@@ -549,12 +563,17 @@ textarea {
         line-height: 16px;
     }
 
-    .comment_user .post_data span:first-child {
-        font-size: 14px;
-    }
 
     .comment_user .post_data span:last-child {
         font-size: 6px;
+    }
+
+    .user_name_and_role_for_comment span {
+        font-size: 14px;
+    }
+
+    .user_name_and_role_for_comment img {
+        width: 15px;
     }
 }
 
