@@ -76,10 +76,10 @@ def init_posts(connection):
     cursor.execute(
         """
     CREATE TABLE IF NOT EXISTS POSTS (
-                post_id INTEGER NOT NULL PRIMARY KEY,
+                post_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                 user_id INTEGER NOT NULL,
-                date TEXT,
-                description TEXT,
+                date TEXT NOT NULL,
+                description TEXT NOT NULL,
                 image_data TEXT,
                 image_ext TEXT,
                 FOREIGN KEY (user_id) REFERENCES users (id)

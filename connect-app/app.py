@@ -73,9 +73,17 @@ def home():
 
 @app.route("/profile/<user_id>", methods=["GET", "POST"])
 def profile(user_id):
-    username = db.get_user_by_user_id(connection, user_id)[1]
-    user = db.get_user_with_posts(connection, username)
-    return render_template("profile.html", user=user)
+
+    check_login = session.get("logged_in", False)
+    check_register = session.get("registered", False)
+    if check_register and not check_login:
+        return redirect(url_for("login"))
+    elif not check_register and not check_login:
+        return redirect(url_for("register"))
+    else :
+        username = db.get_user_by_user_id(connection, user_id)[1]
+        user = db.get_user_with_posts(connection, username)
+        return render_template("profile.html", user=user)
 
 
 @app.route("/display_post/<post_id>", methods=["GET", "POST"])
