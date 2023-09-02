@@ -9,13 +9,13 @@ def init_users(connection):
 
     cursor.execute(
         """
-    CREATE TABLE IF NOT EXISTS users(
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    username TEXT NOT NULL UNIQUE, 
-    password TEXT NOT NULL,
-    admin TEXT NOT NULL
-    )   
-    """
+        CREATE TABLE IF NOT EXISTS users(
+        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        username TEXT NOT NULL UNIQUE, 
+        password TEXT NOT NULL,
+        admin TEXT NOT NULL
+        )   
+        """
     )
 
     connection.commit()
@@ -109,6 +109,7 @@ def get_all_posts(connection):
         post["date"] = row[2]
         user_row = get_user_by_user_id(connection, int(row[1]))
         if user_row:
+            post["admin"] = user_row[3]
             post["username"] = user_row[1]
         posts.append(post)
     return posts
@@ -127,6 +128,7 @@ def get_post_by_post_id(connection, post_id):
         post["date"] = row[2]
         user_row = get_user_by_user_id(connection, int(row[1]))
         if user_row:
+            post["admin"] = user_row[3]
             post["username"] = user_row[1]
     return post
 

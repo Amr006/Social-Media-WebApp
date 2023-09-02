@@ -370,8 +370,12 @@ textarea {
     line-height: 25px;
 }
 
-.post_user .post_data span:first-child {
+.user_name_and_role span {
     font-size: 20px;
+}
+
+.user_name_and_role img {
+    width: 20px;
 }
 
 .post_user .post_data span:last-child {
@@ -404,12 +408,17 @@ textarea {
         line-height: 20px;
     }
 
-    .post_user .post_data span:first-child {
-        font-size: 18px;
-    }
 
     .post_user .post_data span:last-child {
         font-size: 12px;
+    }
+
+    .user_name_and_role span {
+        font-size: 18px;
+    }
+
+    .user_name_and_role img {
+        width: 18px;
     }
 
     .post_description {
@@ -450,7 +459,13 @@ textarea {
     .post_description {
         font-size: 20px;
     }
+    .user_name_and_role span {
+        font-size: 15px;
+    }
 
+    .user_name_and_role img {
+        width: 15px;
+    }
     .post_image {
         width: 100px;
     }

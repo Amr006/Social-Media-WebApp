@@ -6,9 +6,24 @@
         alt="post_user"
       />
       <div class="post_data grid jcfs aic">
-        <span>
-          <a href="http://localhost:5000/profile/{{post.user_id}}"> {{post.username}} </a>
-        </span>
+        <div class="flex jcfs aic g10 user_name_and_role">
+          <span>
+            <a href="http://localhost:5000/profile/{{post.user_id}}">
+              {{post.username}}
+            </a>
+          </span>
+          {% if post.admin == "1" %}
+          <img
+            src="{{ url_for('static', filename='images/admin.png') }}"
+            alt="role"
+          />
+          {% else %}
+          <img
+            src="{{ url_for('static', filename='images/user.png') }}"
+            alt="role"
+          />
+          {% endif %}
+        </div>
         <span>
           {% set date_parts = post.date.split('_') %} {% set date =
           date_parts[0] %} {% set time = date_parts[1] %} {{ date | replace("-",
