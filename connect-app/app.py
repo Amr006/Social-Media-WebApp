@@ -87,6 +87,7 @@ def display_post(post_id):
     elif not check_register and not check_login:
         return redirect(url_for("register"))
     post = db.get_post_by_post_id(connection, post_id)
+    print(post_id)
     comments = db.get_comments_by_post_id(connection, post_id)
     if request.method == "GET":
         return render_template("display_post.html", post=post, comments=comments)

@@ -136,8 +136,6 @@ def delete_post_by_id(connection, post_id):
     cursor.execute(query, (post_id,))
     connection.commit()
 
-
-
 # Comments
 
 def init_comments(connection):
@@ -147,9 +145,10 @@ def init_comments(connection):
     CREATE TABLE IF NOT EXISTS COMMENTS (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 user_id INTEGER NOT NULL,
-                content TEXT not null,
-                comment_id INTEGER NOT NULL UNIQUE,
-                FOREIGN KEY (comment_id) REFERENCES POSTS (post_id)
+                comment TEXT not null,
+                post_id INTEGER NOT NULL,
+                date text not null,
+                FOREIGN KEY (post_id) REFERENCES POSTS (post_id)
             )
     """
     )
@@ -163,7 +162,8 @@ def add_comment_to_db(connection, user_id, comment_content, post_id , date):
 
 def get_comments_by_post_id(connection, post_id):
     cursor = connection.cursor()
-    query = "SELECT * FROM COMMENTS WHERE POST_ID = ?"
+    # print(post_id)
+    query = "SELECT * FROM COMMENTS WHERE post_id = ?"
     cursor.execute(query, (post_id,))
     comments=list()
     for row in cursor.fetchall():
